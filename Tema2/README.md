@@ -14,31 +14,34 @@ $ npm install express@4.11.x
 ```
 
 ### 2. Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían:
->> Crear empresa
-Listar calificaciones para cada empresa
-crear calificación y añadirla (comprobando que la persona no la haya añadido ya)
-borrar calificación (si se arrepiente o te denuncia la empresa o algo)
-Hacer un ránking de empresas por calificación, por ejemplo
-Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades.
-Si se quiere hacer con cualquier otra aplicación, también es válido. Se trata de hacer una aplicación simple que se pueda hacer rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios.Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían
-Crear empresa
-Listar calificaciones para cada empresa
-crear calificación y añadirla (comprobando que la persona no la haya añadido ya)
-borrar calificación (si se arrepiente o te denuncia la empresa o algo)
-Hacer un ránking de empresas por calificación, por ejemplo
-Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades.
-Si se quiere hacer con cualquier otra aplicación, también es válido. Se trata de hacer una aplicación simple que se pueda hacer rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios.
 
-
+Como solución a este ejercicio se puede ver el [proyecto](https://github.com/antoniovj1/infraestructura_virtual_ugr) aunque es un poco más complejo.
 
 
 ### 3. Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
 
 ### 4. Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
+Para iniciar un archivo package.json usamos `npm init` y obtenemos un archivo con la siguieten estructura:
+```json
+{
+  "name": "antonio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
 
+```
 
 ### 5. Automatizar con grunt, gulp u otra herramienta de gestión de tareas en Node la generación de documentación de la librería que se cree usando docco u otro sistema similar de generación de documentatión. . Previamente, por supuesto, habrá que documentar tal librería.
+
+En lugar de usar grunt he decidido usar `WebPack`, un ejemplo de archivo de configuración sería el siguiente:
+[Archivo de configuración](https://github.com/antoniovj1/infraestructura_virtual_ugr/blob/master/webpack.config.dev.js)
 
 
 ### 6. Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
