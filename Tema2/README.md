@@ -45,8 +45,26 @@ En lugar de usar grunt he decidido usar `WebPack`, un ejemplo de archivo de conf
 
 
 ### 6. Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
+Un trabajo similar se ha realizado en [los tests del proyecto](https://github.com/antoniovj1/infraestructura_virtual_ugr/tree/master/test)
 
 ### 7. Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vas a necesitar un poco más adelante.
 
+Para realizar test he creado una serie de archivos con `Chai` que tienen la siguiente estructura [archivo chai](https://github.com/antoniovj1/infraestructura_virtual_ugr/blob/master/test/session.js), luego estos test son ejecutados por `Mocha` que nos proporciona una salida indicando lo que funciona y lo que no.
 
-### 8. Haced los dos primeros pasos antes de pasar al tercero.
+```shell
+. . . . . . 
+
+    /POST 
+      ✓ should not POST an user without username field
+      ✓ POST an user  (287ms)
+      
+    /GET/:user_id
+      ✓ should GET a user by the given id (379ms)
+      
+    /PUT/:user_id
+      ✓ it should UPDATE a user given the id (436ms)
+      
+    /DELETE/:user_id
+      ✓ should DELETE a user given the id (358ms)
+      
+  30 passing (9s)
