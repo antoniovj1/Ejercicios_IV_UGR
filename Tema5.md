@@ -25,7 +25,32 @@ que se indique la localización de la imagen iso y con esto habremos terminado.
 
 
 ### 4. Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+Descargamos `Lubuntu` (ubuntu con LXDE).
+En primer lugar instalamos `Vinagre` mediante la orden `supa pacman -S vinagre`
+Creamos un disco `qemu-img create -f qcow2 lubuntu.img 10G`.
+Instalamos mediante la orden (512 MB RAM) `qemu-system-x86_64 -m 512 -hda lubuntu.img -cdrom Descargas/lubuntu-16.10-desktop-amd64.iso`
+
+Una vez instalado lo ejecutamos de la sigueinte forma `qemu-system-x86_64 -m 2048 -hda lubuntu.img -vnc 0.0.0.0:1`.
+Ahora en la aplicación Vinagre vamos a conectar, elegimos el protocolo VNC e introducimos 0.0.0.0:1 en equipo. Con esto ya tenemos la conexión.
+
+Para tener acceso SSH realizamos lo siguiente [SSH](http://www.bramschoenmakers.nl/en/node/100.html):
+Una vez instalado lo ejecutamos de la sigueinte forma `qemu-system-x86_64 -m 2048 -hda lubuntu.img - -name antonio -redir tcp:2222::22`.
+Y nos conectamos con la sigueinte orden `ssh -p 2222 localhost`
 
 ### 5. Crear una máquina virtual ubuntu e instalar en ella alguno de los servicios que estamos usando en el proyecto de la asignatura.
+Descargamos `Ubuntu` .
+En primer lugar instalamos `Vinagre` mediante la orden `supa pacman -S vinagre`
+Creamos un disco `qemu-img create -f qcow2 ubuntu.img 15G`.
+Instalamos mediante la orden `qemu-system-x86_64 -m 4096 -hda ubuntu.img -cdrom Descargas/ubuntu-16.10-desktop-amd64.iso`
+Luego dentro de la máquina llevamos a cabo una instalación normal, por ejemplo instalamos `Node.js 6` mediante las ordenes
+```bash
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+``` 
 
 ### 6. Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+La instalación de Linux Mint la voy a realizar en VirtualBox, del mismo modo que en el ejercicio 2.2
+Podemos descargar la imagen iso en [su web](https://www.linuxmint.com/download.php)
+Una vez descargada hacemos click en `Nueva` y seguimos los
+pasos que se indican. Una vez que han acabado, seleccionamos la máquina de `Linux Mint` y le damos a `Iniciar`, tras esto se nos pide
+que se indique la localización de la imagen iso y con esto habremos terminado.
